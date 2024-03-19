@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>minha página web</title>
+    <title>Minha página web</title>
     <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
@@ -12,25 +12,27 @@
     </div>
 
     <div class="div-inferior">
-
         <form action="/inserircontato" method="post">
             <label>Nome</label><br>
             <input type="text" name="nome"><br><br>
 
-            <label>seu e-mail</label><br>
+            <label>Seu e-mail</label><br>
             <input type="email" name="email" ><br><br>
 
-            <label>seu CEP</label><br>
+            <label>Seu CEP</label><br>
             <input type="text" name="cep" ><br><br>
 
-            <label>seu e-mail</label><br>
-            <textarea name="texto"></textarea>
-                <br>
-            <button type="submit">Enviar</button>
+            <label>Mensagem</label><br>
+            <textarea name="texto"></textarea><br><br>
 
+            <button type="submit">Enviar</button>
         </form>
         <br>
         <a style="color:red">{{ msg}}</a>
+    </div>
+
+    <div class="div-listar-contatos">
+        <a href="/listarcontatos">Listar Contatos</a>
     </div>
 </body>
 </html>

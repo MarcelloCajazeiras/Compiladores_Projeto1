@@ -67,6 +67,14 @@ def inserircontato():
         #criar pagina de erro de contato
         return render_template('contato.html', msg='cep invalido')
 
+@app.route('/listarcontatos')
+def listar_contatos():
+    if 'idusuario' in session:
+        contatos = dao.obter_contatos_por_usuario(session['idusuario'])
+        return render_template('listar_contatos.html', contatos=contatos)
+    else:
+        return render_template('home.html', msg='Faça login para acessar esta página')
+
 
 if __name__ == '__main__':
     app.run(debug=True) #executa/roda/starta o servidor
